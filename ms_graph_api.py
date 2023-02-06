@@ -47,7 +47,7 @@ def generate_access_token(app_id, scopes):
         flow = client.initiate_device_flow(scopes=scopes)
         app_code = flow['message']
         print(app_code)
-        # st.write(app_code)
+        st.write(app_code)
         webbrowser.open(flow['verification_uri'], new=True)
 
         token_response = client.acquire_token_by_device_flow(flow)
